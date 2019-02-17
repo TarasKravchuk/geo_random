@@ -29,7 +29,7 @@ class SquareShape():
             #     if self.p2[0] == self.p3[0] or self.p2[1] == self.p3[1]:
             #         if self.p3[0] == self.p4[0] or self.p3[1] == self.p4[1]:
             #             if self.p4[0] == self.p1[0] or self.p4[1] == self.p1[1]:
-            return SquareShape(self.point_1_x, self.point_1_y, self.point_2_x, self.point_2_y,
+            SquareShape(self.point_1_x, self.point_1_y, self.point_2_x, self.point_2_y,
                                               self.point_3_x, self.point_3_y, self.point_4_x, self.point_4_y).ninety_degree_angle()
         #                 # else: print("line number 3 should end at the place where line number 4 begins, try again")
         #             else: print("line number 3 should end at the place where line number 4 begins, try again")
@@ -43,11 +43,16 @@ class SquareShape():
             math.sqrt((self.p3[0]) ** 2 + self.p3[1] ** 2)) == 0 and (self.p3[0] * self.p4[0] + self.p3[1] * self.p4[1]) / (math.sqrt((self.p3[0])**2 + self.p4[1]**2) *
             math.sqrt((self.p4[0])**2 + self.p4[1]**2)) == 0 and (self.p4[0] * self.p1[0] + self.p4[1] * self.p1[1]) / (math.sqrt((self.p4[0])**2 + self.p4[1]**2) *
             math.sqrt((self.p1[0])**2 + self.p1[1]**2)) == 0:
-            return SquareShape(self.point_1_x, self.point_1_y, self.point_2_x, self.point_2_y,self.point_3_x, self.point_3_y,
+            SquareShape(self.point_1_x, self.point_1_y, self.point_2_x, self.point_2_y,self.point_3_x, self.point_3_y,
                                self.point_4_x, self.point_4_y).get_square()
+            return True
         else: print("all corners of the square should be equal 90°, try again")
+        return False
 
     def get_square(self):
         """Площадь прямоугольника равна произведению его сторон (: """
         square_square = self.l1 * self.l2
-        return print("Square of Square with coordinates given by you  ==  ", square_square)
+        print(f"Vertices of square is: A x({self.point_1_x})y({self.point_1_y}) B x({self.point_2_x}),y({self.point_2_y})"
+              f"C x({self.point_3_x}) y({self.point_3_y}) D x({self.point_4_x}) y({self.point_4_y})\n"
+              f"Square of Square ==  {square_square}")
+        return True

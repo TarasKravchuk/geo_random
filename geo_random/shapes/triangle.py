@@ -24,10 +24,16 @@ class TriangleShape():
         по Х и по Y."""
         if self.p1[0] == self.p2[0] == self.p3[0] or self.p1[1] == self.p2[1] == self.p3[1]:
             print("unfortunately such a triangle cannot exist, try again")
-        else: TriangleShape(self.point_1_x, self.point_1_y, self.point_2_x, self.point_2_y, self.point_3_x, self.point_3_y).get_square()
+            return False
+        else:
+            TriangleShape(self.point_1_x, self.point_1_y, self.point_2_x, self.point_2_y, self.point_3_x, self.point_3_y).get_square()
+            return True
 
     def get_square(self):
         """Расчет площади триугольника по формуле Герона"""
         p = (self.l1 + self.l2 + self.l3) / 2
         triangle_square = math.sqrt((p * (p - self.l1) * (p - self.l2) * (p - self.l3)))
-        return print("Square of Triangle with coordinates given by you  ==  ", triangle_square)
+        print(f"Vertices of triangle is: A x({self.point_1_x})y({self.point_1_y}) B x({self.point_2_x})y({self.point_2_y})"
+              f"C x({self.point_3_x}) y({self.point_3_y})"
+              f"Square of Triangle ==  {triangle_square}")
+        return True
