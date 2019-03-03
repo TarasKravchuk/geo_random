@@ -20,6 +20,4 @@ class CircleShape ():
     def get_square(self):
         """Расчет площади круга по двум точкам - центр круга и точка на окружности"""
         circle_square = self.l1**2 * math.pi
-        print(f"Vertices of circle is: A x({self.point_1_x})y({self.point_1_y}) B x({self.point_2_x}),y({self.point_2_y})\n"
-              f"Square of Circle with coordinates given by you  ==  ", circle_square)
-        return True
+        return circle_square
